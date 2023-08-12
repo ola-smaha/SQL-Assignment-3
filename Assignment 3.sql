@@ -38,6 +38,14 @@ WHERE title ILIKE '%Love%'
 SELECT title
 FROM public.film
 WHERE LOWER(title) LIKE '%love%'
+-- If we need the word 'love' alone:
+SELECT title
+FROM public.film
+WHERE
+	title ILIKE '% love%'
+	OR title ILIKE '%love %'
+	OR title ILIKE '% love %'
+
 
 --Display the title of movies in uppercase and their description in lowercase.
 SELECT
